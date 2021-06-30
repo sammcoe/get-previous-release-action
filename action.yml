@@ -1,0 +1,11 @@
+name: "Get Previous Release"
+description: "Gets the previous (the one BEFORE the most recent) release tag from git and outputs that for use in other actions"
+branding:
+  icon: "tag"
+  color: "green"
+outputs:
+  release:
+    description: "Previous release tag"
+runs:
+  using: "node12"
+  main: "main.js"
