@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 exec(
-  "git rev-list --tags --max-count=1 --skip=1 --no-walk",
+  "git rev-list --tags --max-count=1 --skip=2 --no-walk",
   (err, rev, stderr) => {
     if (err) {
       console.log(
