@@ -26,6 +26,9 @@ update_release:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
+      with:
+        ref: main
+        fetch-depth:
     - uses: rlespinasse/github-slug-action@v3.x
     - name: Get previous release tag
       id: previous-release
