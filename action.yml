@@ -4,8 +4,10 @@ branding:
   icon: "tag"
   color: "green"
 outputs:
-  release:
+  tag:
     description: "Previous release tag"
+  rev:
+    description: "Previous release"
 runs:
   using: "node12"
   main: "main.js"

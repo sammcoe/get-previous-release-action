@@ -23,7 +23,9 @@ exec(
       tag = tag.trim();
 
       console.log("\x1b[32m%s\x1b[0m", `Found tag: ${tag}`);
+      console.log("\x1b[32m%s\x1b[0m", `Found rev: ${rev}`);
       console.log(`::set-output name=tag::${tag}`);
+      console.log(`::set-output name=rev::${rev}`);
       process.exit(0);
     });
   }
