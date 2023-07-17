@@ -38,7 +38,7 @@ update_release:
       uses: metcalfc/changelog-generator@v1.0.0
       with:
         mytoken: ${{ secrets.GITHUB_TOKEN }}
-        base-ref: ${{ steps.previous-release.output.release }}
+        base-ref: ${{ steps.previous-release.outputs.tag }}
     - name: Updating Release
       uses: ncipollo/release-action@v1.8.6
       with:
