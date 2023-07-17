@@ -30,12 +30,18 @@ exec(
         (err, stdout, stderr) => {
           if (err) {
             console.log(
-              "\x1b[33m%s\x1b[0m",
+              "\x1b[31m%s\x1b[0m",
               "Could not write output state because: "
             );
-            console.log("\x1b[31m%s\x1b[0m", stderr);
+            console.log(stderr);
             process.exit(1);
+          } else {
+            console.log(
+              "\x1b[32m%s\x1b[0m",
+              "Wrote tag to output successfully."
+            );
           }
+
         }
       )
 
@@ -44,11 +50,16 @@ exec(
         (err, stdout, stderr) => {
           if (err) {
             console.log(
-              "\x1b[33m%s\x1b[0m",
+              "\x1b[31m%s\x1b[0m",
               "Could not write output state because: "
             );
-            console.log("\x1b[31m%s\x1b[0m", stderr);
+            console.log(stderr);
             process.exit(1);
+          } else {
+            console.log(
+              "\x1b[32m%s\x1b[0m",
+              "Wrote rev to output successfully."
+            );
           }
         }
       )
