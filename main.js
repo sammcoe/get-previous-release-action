@@ -24,8 +24,35 @@ exec(
 
       console.log("\x1b[32m%s\x1b[0m", `Found tag: ${tag}`);
       console.log("\x1b[32m%s\x1b[0m", `Found rev: ${rev}`);
-      console.log(`tag=${tag}`);
-      console.log(`rev=${rev}`);
+
+      exec(
+        `echo "tag=${tag}" >> $GITHUB_STATE`,
+        (err, stdout, stderr) => {
+          if (err) {
+            console.log(
+              "\x1b[33m%s\x1b[0m",
+              "Could not write output state because: "
+            );
+            console.log("\x1b[31m%s\x1b[0m", stderr);
+            process.exit(1);
+          }
+        }
+      )
+
+      exec(
+        `echo "rev=${rev}" >> $GITHUB_STATE`,
+        (err, stdout, stderr) => {
+          if (err) {
+            console.log(
+              "\x1b[33m%s\x1b[0m",
+              "Could not write output state because: "
+            );
+            console.log("\x1b[31m%s\x1b[0m", stderr);
+            process.exit(1);
+          }
+        }
+      )
+
       process.exit(0);
     });
   }
